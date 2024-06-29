@@ -1,2 +1,2 @@
-# BootMongoDBProj07_QueryMethods
-BootMongoDBProj07_QueryMethods
+# BootMongoDBProject01_MongoReporsitory_CURDOperations
+BootMongoDBProject01_MongoReporsitory_CURDOperations
