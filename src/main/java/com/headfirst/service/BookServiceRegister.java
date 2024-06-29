@@ -3,7 +3,6 @@ package com.headfirst.service;
 import com.headfirst.entity.Book;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface BookServiceRegister {
 
@@ -11,5 +10,7 @@ public interface BookServiceRegister {
 
 	public List<Book> findAllBooks();
 
-	public Optional<Book> findByAuthor(String author);
+	public List<Book> findByAuthor(String author);
+
+	public List<Book> findByAuthors(Integer author1,Integer author2);
 }

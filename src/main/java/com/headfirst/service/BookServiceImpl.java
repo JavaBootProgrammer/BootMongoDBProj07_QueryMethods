@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service("dockService")
 public class BookServiceImpl implements BookServiceRegister {
@@ -31,7 +30,13 @@ public class BookServiceImpl implements BookServiceRegister {
 	}
 
 	@Override
-	public Optional<Book> findByAuthor(String author) {
-		return bookRepository.findById(author);
+	public List<Book> findByAuthor(String author) {
+		return bookRepository.findByAuthorBOrderByAuthor(author);
+	}
+
+	@Override
+	public List<Book> findByAuthors(Integer author1, Integer author2) {
+		List<Book> list=bookRepository.findByAuthorOrderByORAuthor(author1,author2);
+		return list;
 	}
 }

@@ -14,25 +14,16 @@ import java.util.List;
 public class MongoRepoRunner implements CommandLineRunner {
 
 	@Autowired
-	BookRepository bookRepository;
-	@Autowired
-	BookServiceRegister bookServiceRegister;
-
-	@Autowired
 	BookServiceImpl bookWriterImpl;
 
 
 	@Override
 	public void run(String... args) throws Exception {
 
-//		publishABook();
-//		findAllBooks();
-//		findByID("667c6b5d46d4243be51bf197");
-		List<Book> authors= bookRepository.findByAuthorBOrderByAuthor("RGV");
-		System.out.println(authors);
-
-
-
+		//System.out.println(bookWriterImpl.findByAuthor("RGV"));
+		System.out.println("-------");
+		System.out.println(bookWriterImpl.findByAuthors(401,420));
+		System.out.println("-------");
 
 	}
 
@@ -48,7 +39,7 @@ public class MongoRepoRunner implements CommandLineRunner {
 		book.setAuthor("Yadamoor Veren");
 		book.setPages(403);
 		book.setPress("Vijayawada");
-		bookServiceRegister.publishTheBook(book);
+
 	}
 
 	private void findAllBooks() {

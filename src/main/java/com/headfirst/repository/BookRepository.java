@@ -10,4 +10,8 @@ public interface BookRepository extends MongoRepository<Book, String> {
 
     @Query(value = "{author: ?0}")
   public    List<Book> findByAuthorBOrderByAuthor(String author);
+
+
+    @Query("{pages: {$in: [authorOne, authorTwo]}}")
+    public    List<Book> findByAuthorOrderByORAuthor(Integer authorOne,Integer authorTwo);
 }
