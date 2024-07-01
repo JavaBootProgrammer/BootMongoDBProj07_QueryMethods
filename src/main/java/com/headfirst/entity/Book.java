@@ -1,14 +1,14 @@
 package com.headfirst.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Setter
+@Getter
 @Document(collection = "book")
 public class Book {
 
@@ -19,7 +19,7 @@ public class Book {
 
 	private Integer pages;
 
-	private String press;
+	private String title;
 
 	@Override
 	public String toString() {
@@ -27,7 +27,7 @@ public class Book {
 				"id='" + id + '\'' +
 				", author='" + author + '\'' +
 				", pages=" + pages +
-				", press='" + press + '\'' +
+				", press='" + title + '\'' +
 				'}';
 	}
 
