@@ -9,9 +9,9 @@ import java.util.List;
 public interface BookRepository extends MongoRepository<Book, String> {
 
     @Query(value = "{author: ?0}")
-  public    List<Book> findByAuthorBOrderByAuthor(String author);
+    public    List<Book> findByAuthorBOrderByAuthor(String author);
 
+    public   List<Book> findBookByPages(Integer authorOne);
 
-    @Query("{pages: {$in: [authorOne, authorTwo]}}")
-    public    List<Book> findByAuthorOrderByORAuthor(Integer authorOne,Integer authorTwo);
+    public List<Book> findBooksByPagesGreaterThanEqual(Integer authorOne);
 }
