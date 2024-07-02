@@ -46,9 +46,9 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> findBooksByPagesGreaterThanEqualService(Integer author1) {
+	public List<Book> findBooksByPagesGreaterThanEqualService(Integer pageNumber) {
 		System.out.println("-------"+"findBooksByPagesGreaterThanEqualService"+"-------");
-		return bookRepository.findBooksByPagesGreaterThanEqual(author1);
+		return bookRepository.findBooksByPagesGreaterThanEqual(pageNumber);
 	}
 
 }

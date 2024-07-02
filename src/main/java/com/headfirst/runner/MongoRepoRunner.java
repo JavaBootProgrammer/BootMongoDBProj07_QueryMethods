@@ -16,33 +16,26 @@ public class MongoRepoRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		//System.out.println(bookWriterImpl.findByAuthor("RGV"));
+
 		System.out.println("-------");
 		findBooksByPagesGreaterThanEqualService();
 		System.out.println("-------");
 
 	}
 
-//	private void findByID(String yand) {
-//
-//		System.out.println("-------------------");
-//		System.out.println(bookService.findByAuthorService(yand));
-//		System.out.println("-------------------");
-//	}
-//
-//	private void publishABook() {
-//		Book book = new Book();
-//		book.setAuthor("Yadamoor Veren");
-//		book.setPages(403);
-//		book.setPress("Vijayawada");
-//
-//
-//
-//	private void findAllBooks() {
-//		System.out.println("***************");
-//		bookService.findAllBooksService().forEach(System.out::println);
-//		System.out.println("***************");
-//	}
+	private void findByID(String yand) {
+
+		System.out.println("-------------------");
+		System.out.println(bookService.findByAuthorService(yand));
+		System.out.println("-------------------");
+	}
+
+
+	private void findAllBooks() {
+		System.out.println("***************");
+		bookService.findAllBooksService().forEach(System.out::println);
+		System.out.println("***************");
+	}
 	private void findBooksByPagesGreaterThanEqualService() {
 		System.out.println("***************");
 		System.out.println(bookService.findBooksByPagesGreaterThanEqualService(200));

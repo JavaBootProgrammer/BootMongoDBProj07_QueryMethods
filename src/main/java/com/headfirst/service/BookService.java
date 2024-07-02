@@ -14,5 +14,5 @@ public interface BookService {
 
 	public List<Book> findBookByPagesService(Integer author1);
 
-	public List<Book> findBooksByPagesGreaterThanEqualService(Integer author1);
+	public List<Book> findBooksByPagesGreaterThanEqualService(Integer pageNumber);
 }

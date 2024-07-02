@@ -14,4 +14,6 @@ public interface BookRepository extends MongoRepository<Book, String> {
     public   List<Book> findBookByPages(Integer authorOne);
 
     public List<Book> findBooksByPagesGreaterThanEqual(Integer authorOne);
+
+    public List<Book> findBooksByPagesLessThan(Integer pageNumber);
 }
