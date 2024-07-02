@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BookRepository extends MongoRepository<Book, String> {
 
@@ -13,7 +14,7 @@ public interface BookRepository extends MongoRepository<Book, String> {
 
     public   List<Book> findBookByPages(Integer authorOne);
 
-    public List<Book> findBooksByPagesGreaterThanEqual(Integer authorOne);
+    public  List<Book>   findBooksByPagesGreaterThanEqual(Integer authorOne);
 
-    public List<Book> findBooksByPagesLessThan(Integer pageNumber);
+    public  List<Book>  findBooksByPagesLessThan(Integer pageNumber);
 }

@@ -38,7 +38,7 @@ public class MongoRepoRunner implements CommandLineRunner {
 	}
 	private void findBooksByPagesGreaterThanEqualService() {
 		System.out.println("***************");
-		System.out.println(bookService.findBooksByPagesGreaterThanEqualService(200));
+		System.out.println(bookService.findBooksByPagesGreaterThanEqualService(100));
 		System.out.println("***************");
 	}
 }

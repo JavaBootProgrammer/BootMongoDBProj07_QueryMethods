@@ -7,8 +7,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.ObjectError;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service("dockService")
 public class BookServiceImpl implements BookService {
@@ -46,8 +48,26 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> findBooksByPagesGreaterThanEqualService(Integer pageNumber) {
-		System.out.println("-------"+"findBooksByPagesGreaterThanEqualService"+"-------");
+	public  List<Book>  findBooksByPagesGreaterThanEqualService(Integer pageNumber) {
+		System.out.println("-------"+"findBooksByPagesGreaterThanEqualService"+"-------"+bookRepository.findBooksByPagesGreaterThanEqual(pageNumber));
+
+		Integer list = bookRepository.findBooksByPagesGreaterThanEqual(pageNumber).size();
+		System.out.println("size of list is : "+list);
+
+		for (Book obj:  bookRepository.findBooksByPagesGreaterThanEqual(pageNumber)){
+
+			System.out.println("---------------------");
+			System.out.println("each item in the list : "+obj);
+
+
+			System.out.println("Book Author is : "+ obj.getAuthor());
+			System.out.println("Id is are : "+ obj.getId());
+			System.out.println("Title is : "+ obj.getTitle());
+			System.out.println("Total Pages are : "+ obj.getPages());
+			System.out.println("---------------------");
+		}
+
+
 		return bookRepository.findBooksByPagesGreaterThanEqual(pageNumber);
 	}
 
